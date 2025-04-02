@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Educativa - IES Antonio Domínguez Ortiz</title>
+    <meta name="description" content="Descubre nuestra completa oferta educativa: ESO, Bachillerato y Formación Profesional en el IES Antonio Domínguez Ortiz de Sevilla.">
+    
+    <!-- Preconexión para mejorar rendimiento -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --color-primario: #0056a3;
+            --color-secundario: #4caf50;
+            --color-fondo: #f8f9fa;
+            --color-texto: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primario) 0%, #003366 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-secundario);
+        }
+        
+        .logo img {
+            max-height: 90px;
+        }
+        
+         /* Barra de navegación */
+         .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--color-primario);
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link:focus,
+        .navbar-nav .nav-link.active {
+            color: var(--color-secundario);
+            transform: translateY(-2px);
+        }
+        
+        .navbar-nav .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1.25rem;
+            right: 1.25rem;
+            height: 3px;
+            background-color: var(--color-secundario);
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--color-secundario);
+        }
+        
+        .dropdown-item {
+            padding: 0.5rem 1.5rem;
+            transition: all 0.2s;
+        }
+        
+        .dropdown-item:hover, 
+        .dropdown-item:focus {
+            background-color: var(--color-secundario);
+            color: white;
+            padding-left: 1.75rem;
+        }
+        
+        /* Hero section */
+        .hero-oferta {
+            background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8)), 
+                        url('recursos/imagenes/aula-clase.jpg') center/cover no-repeat;
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-oferta h1 {
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero-oferta .breadcrumb {
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+        }
+        
+        /* Tarjetas de etapas educativas */
+        .etapa-card {
+            border-radius: 8px;
+            border-left: 5px solid var(--color-secundario);
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            height: 100%;
+            transition: transform 0.3s ease;
+            margin-left: 0.5rem; /* Espacio adicional a la izquierda */
+        }
+
+        .etapa-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .etapa-card .card-header {
+            background-color: var(--color-primario);
+            color: white;
+            font-weight: 600;
+            border-bottom: none;
+            padding: 0.75rem 1.5rem; /* Más padding horizontal */
+        }
+
+        .etapa-card .card-body {
+            padding: 1.5rem 1.5rem 1.5rem 2rem; /* Más padding a la izquierda */
+        }
+
+        .etapa-card .card-title {
+            margin-bottom: 1rem;
+            padding-left: 0.5rem; /* Alineación con el contenido */
+            position: relative;
+        }
+
+        /* Lista de asignaturas */
+        .asignatura-list {
+            list-style-type: none;
+            padding-left: 0.5rem; /* Sangría para la lista */
+            columns: 2;
+            column-gap: 2rem;
+            margin-left: 0.5rem; /* Espacio adicional */
+        }
+
+        .asignatura-list li {
+            padding: 0.25rem 0;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 0.5rem; /* Espacio para los iconos */
+        }
+
+        .asignatura-list i {
+            color: var(--color-secundario);
+            margin-right: 0.5rem;
+            position: absolute;
+            left: -0.5rem; /* Posicionamiento de iconos */
+        }
+        
+        /* Acordeón para FP */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(0, 86, 163, 0.1);
+            color: var(--color-primario);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,.125);
+        }
+        
+        /* Títulos de sección */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primario);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-secundario);
+        }
+        
+        /* Footer mejorado */
+        footer {
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-secundario);
+        }
+        
+        .footer-link {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-secundario);
+            transform: translateX(5px);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1rem;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--color-secundario);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 767.98px) {
+            .header, .hero-oferta {
+                padding: 2rem 0;
+            }
+            
+            .logo img {
+                max-height: 70px;
+            }
+            
+            .asignatura-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera institucional -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 col-6 logo">
+                    <img src="recursos/imagenes/logo.jpg" alt="Logo IES Antonio Domínguez Ortiz" class="img-fluid" loading="lazy">
+                </div>
+                <div class="col-md-10 col-6 text-center text-md-start">
+                    <h1 class="mb-1 display-5 fw-bold">IES ANTONIO DOMÍNGUEZ ORTIZ</h1>
+                    <p class="lead mb-0 d-none d-md-block">Formando personas, construyendo futuro</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Barra de navegación principal -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
+                            NUESTRO CENTRO
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="datoscentro.html"><i class="bi bi-building me-2"></i>Datos del Centro</a></li>
+                            <li><a class="dropdown-item active" href="ofertaeducativa.html"><i class="bi bi-book me-2"></i>Oferta Educativa</a></li>
+                            <li><a class="dropdown-item" href="plan-centro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
+                            <li><a class="dropdown-item" href="plan-acogida.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
+                            <li><a class="dropdown-item" href="biblioteca.html"><i class="bi bi-bookmarks me-2"></i>Biblioteca</a></li>
+                            <li><a class="dropdown-item" href="convivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="familias.html">FAMILIAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profesorado.html">PROFESORADO</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarProyectos" role="button" data-bs-toggle="dropdown">
+                            PROYECTOS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="proyectos-educativos.html"><i class="bi bi-lightbulb me-2"></i>Educativos</a></li>
+                            <li><a class="dropdown-item" href="programa-aldea.html"><i class="bi bi-tree me-2"></i>Programa ALDEA</a></li>
+                            <li><a class="dropdown-item" href="steam.html"><i class="bi bi-cpu me-2"></i>Proyecto STEAM</a></li>
+                            <li><a class="dropdown-item" href="digital.html"><i class="bi bi-laptop me-2"></i>Transformación Digital</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-oferta">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                  <li class="breadcrumb-item"><a href="#">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Oferta Educativa</li>
+                </ol>
+            </nav>
+            <h1 class="display-4 fw-bold mb-3">Oferta Educativa</h1>
+            <p class="lead mb-0">Descubre nuestra completa formación académica adaptada a cada etapa</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container mb-5">
+        <!-- Educación Secundaria Obligatoria -->
+        <section class="mb-5">
+            <h2 class="section-title">Educación Secundaria Obligatoria (ESO)</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-1-circle me-2"></i>1º ESO
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Primer Curso</h5>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-book"> </i> Lengua Castellana</li>
+                                <li><i class="bi bi-calculator"> </i> Matemáticas</li>
+                                <li><i class="bi bi-globe"> </i> Geografía e Historia</li>
+                                <li><i class="bi bi-translate"> </i> Inglés</li>
+                                <li><i class="bi bi-flower1"> </i> Biología y Geología</li>
+                                <li><i class="bi bi-palette"> </i> Educación Plástica</li>
+                                <li><i class="bi bi-music-note"></i> Música</li>
+                                <li><i class="bi bi-people"></i> Tutoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-2-circle me-2"></i>2º ESO
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Segundo Curso</h5>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-book"></i> Lengua Castellana</li>
+                                <li><i class="bi bi-calculator"></i> Matemáticas</li>
+                                <li><i class="bi bi-globe"></i> Geografía e Historia</li>
+                                <li><i class="bi bi-translate"></i> Inglés</li>
+                                <li><i class="bi bi-activity"></i> Educación Física</li>
+                                <li><i class="bi bi-cpu"></i> Tecnología</li>
+                                <li><i class="bi bi-mortarboard"></i> Valores Éticos</li>
+                                <li><i class="bi bi-people"></i> Tutoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-3-circle me-2"></i>3º ESO
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Tercer Curso</h5>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-book"></i> Lengua Castellana</li>
+                                <li><i class="bi bi-calculator"></i> Matemáticas</li>
+                                <li><i class="bi bi-globe"></i> Geografía e Historia</li>
+                                <li><i class="bi bi-translate"></i> Inglés</li>
+                                <li><i class="bi bi-activity"></i> Educación Física</li>
+                                <li><i class="bi bi-flask"></i> Física y Química</li>
+                                <li><i class="bi bi-laptop"></i> Digitalización</li>
+                                <li><i class="bi bi-people"></i> Tutoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-4-circle me-2"></i>4º ESO
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cuarto Curso</h5>
+                            <p class="mb-2"><strong>Itinerarios:</strong></p>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-book"></i> Lengua Castellana</li>
+                                <li><i class="bi bi-globe"></i> Geografía e Historia</li>
+                                <li><i class="bi bi-translate"></i> Inglés</li>
+                                <li><i class="bi bi-activity"></i> Educación Física</li>
+                                <li><i class="bi bi-mortarboard"></i> Valores Éticos</li>
+                                <li><strong>Opción A:</strong> Matemáticas Académicas</li>
+                                <li><strong>Opción B:</strong> Matemáticas Aplicadas</li>
+                                <li><i class="bi bi-people"></i> Tutoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bachillerato -->
+        <section class="mb-5">
+            <h2 class="section-title">Bachillerato</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-mortarboard me-2"></i>Bachillerato de Ciencias
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Modalidad de Ciencias</h5>
+                            <p class="mb-3">Formación orientada a estudios universitarios en áreas científicas, tecnológicas y de salud.</p>
+                            
+                            <h6 class="fw-bold">Asignaturas troncales:</h6>
+                            <ul class="asignatura-list mb-3">
+                                <li><i class="bi bi-book"></i> Lengua Castellana</li>
+                                <li><i class="bi bi-globe"></i> Historia de España</li>
+                                <li><i class="bi bi-translate"></i> Inglés</li>
+                                <li><i class="bi bi-calculator"></i> Matemáticas I/II</li>
+                            </ul>
+                            
+                            <h6 class="fw-bold">Asignaturas específicas:</h6>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-flask"></i> Física</li>
+                                <li><i class="bi bi-droplet"></i> Química</li>
+                                <li><i class="bi bi-bounding-box"></i> Dibujo Técnico</li>
+                                <li><i class="bi bi-activity"></i> Educación Física</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="etapa-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-mortarboard me-2"></i>Bachillerato de Humanidades y Ciencias Sociales
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Modalidad Humanidades</h5>
+                            <p class="mb-3">Formación orientada a estudios universitarios en humanidades, ciencias sociales y jurídicas.</p>
+                            
+                            <h6 class="fw-bold">Asignaturas troncales:</h6>
+                            <ul class="asignatura-list mb-3">
+                                <li><i class="bi bi-book"></i> Lengua Castellana</li>
+                                <li><i class="bi bi-globe"></i> Historia de España</li>
+                                <li><i class="bi bi-translate"></i> Inglés</li>
+                                <li><i class="bi bi-graph-up"></i> Matemáticas Aplicadas</li>
+                            </ul>
+                            
+                            <h6 class="fw-bold">Asignaturas específicas:</h6>
+                            <ul class="asignatura-list">
+                                <li><i class="bi bi-journal-bookmark"></i> Latín</li>
+                                <li><i class="bi bi-globe-europe-africa"></i> Historia del Arte</li>
+                                <li><i class="bi bi-cash-coin"></i> Economía</li>
+                                <li><i class="bi bi-activity"></i> Educación Física</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Formación Profesional -->
+        <section class="mb-5">
+            <h2 class="section-title">Formación Profesional</h2>
+            
+            <div class="accordion" id="accordionFP">
+                <!-- Grado Medio -->
+                <div class="accordion-item border-0 mb-3">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <i class="bi bi-award me-2"></i> Ciclos Formativos de Grado Medio
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionFP">
+                        <div class="accordion-body p-0">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="etapa-card h-100">
+                                        <div class="card-header bg-white text-primary border-bottom">
+                                            <i class="bi bi-gear me-2"></i>Sistemas Microinformáticos y Redes
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">SMIR</h5>
+                                            <p class="mb-3">Formación en instalación, configuración y mantenimiento de sistemas microinformáticos y redes.</p>
+                                            
+                                            <h6 class="fw-bold">Módulos profesionales:</h6>
+                                            <ul class="asignatura-list">
+                                                <li><i class="bi bi-pc-display"></i> Montaje y mantenimiento</li>
+                                                <li><i class="bi bi-router"></i> Redes locales</li>
+                                                <li><i class="bi bi-windows"></i> Sistemas operativos</li>
+                                                <li><i class="bi bi-shield-check"></i> Seguridad informática</li>
+                                                <li><i class="bi bi-cloud"></i> Servicios en red</li>
+                                            </ul>
+                                            
+                                            <div class="mt-3">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="etapa-card h-100">
+                                        <div class="card-header bg-white text-primary border-bottom">
+                                            <i class="bi bi-building-gear me-2"></i>Instalaciones Eléctricas y Automáticas
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">IEA</h5>
+                                            <p class="mb-3">Formación en instalaciones eléctricas de baja tensión, máquinas eléctricas y automatismos.</p>
+                                            
+                                            <h6 class="fw-bold">Módulos profesionales:</h6>
+                                            <ul class="asignatura-list">
+                                                <li><i class="bi bi-lightning-charge"></i> Electrotecnia</li>
+                                                <li><i class="bi bi-houses"></i> Instalaciones eléctricas</li>
+                                                <li><i class="bi bi-cpu"></i> Automatismos industriales</li>
+                                                <li><i class="bi bi-tools"></i> Mantenimiento</li>
+                                                <li><i class="bi bi-graph-up"></i> Electrónica</li>
+                                            </ul>
+                                            
+                                            <div class="mt-3">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grado Superior -->
+                <div class="accordion-item border-0">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <i class="bi bi-award-fill me-2"></i> Ciclos Formativos de Grado Superior
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFP">
+                        <div class="accordion-body p-0">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="etapa-card h-100">
+                                        <div class="card-header bg-white text-primary border-bottom">
+                                            <i class="bi bi-code-square me-2"></i>Desarrollo de Aplicaciones Multiplataforma
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">DAM</h5>
+                                            <p class="mb-3">Formación en desarrollo de aplicaciones informáticas para múltiples plataformas y sistemas.</p>
+                                            
+                                            <h6 class="fw-bold">Módulos profesionales:</h6>
+                                            <ul class="asignatura-list">
+                                                <li><i class="bi bi-file-code"></i> Programación</li>
+                                                <li><i class="bi bi-database"></i> Bases de datos</li>
+                                                <li><i class="bi bi-phone"></i> Desarrollo interfaces</li>
+                                                <li><i class="bi bi-globe"></i> Programación web</li>
+                                                <li><i class="bi bi-phone"></i> Apps móviles</li>
+                                            </ul>
+                                            
+                                            <div class="mt-3">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="etapa-card h-100">
+                                        <div class="card-header bg-white text-primary border-bottom">
+                                            <i class="bi bi-shield-check me-2"></i>Administración de Sistemas Informáticos en Red
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">ASIR</h5>
+                                            <p class="mb-3">Formación en administración, configuración y mantenimiento de sistemas informáticos y redes.</p>
+                                            
+                                            <h6 class="fw-bold">Módulos profesionales:</h6>
+                                            <ul class="asignatura-list">
+                                                <li><i class="bi bi-server"></i> Implantación de sistemas</li>
+                                                <li><i class="bi bi-router"></i> Planificación de redes</li>
+                                                <li><i class="bi bi-database"></i> Bases de datos</li>
+                                                <li><i class="bi bi-cloud"></i> Servicios en red</li>
+                                                <li><i class="bi bi-shield-lock"></i> Seguridad</li>
+                                            </ul>
+                                            
+                                            <div class="mt-3">
+                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer institucional -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="recursos/imagenes/logo.jpg" alt="Logo" height="50" class="me-3" loading="lazy">
+                        <h3 class="h5 mb-0">IES Antonio Domínguez Ortiz</h3>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6342.304907925671!2d-5.9655257!3d37.362569400000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126e8be0282907%3A0x5386c655942c7898!2sInstituto%20de%20Educaci%C3%B3n%20Secundaria%20(IES)%20%22Antonio%20Dom%C3%ADnguez%20Ortiz%22!5e0!3m2!1ses!2ses!4v1743417003706!5m2!1ses!2ses" width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <address class="mt-4">
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-geo-alt text-primary me-3"></i>
+                            <span>Av. de Las Letanías, s/n<br>41013, Sevilla</span>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-3"></i>
+                            <span>671 56 97 33</span>
+                        </div>
+                        <div class="d-flex">
+                            <i class="bi bi-envelope text-primary me-3"></i>
+                            <span>41009068.edu@juntadeandalucia.es</span>
+                        </div>
+                    </address>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="h5 mb-3 border-bottom pb-2 text-white">FAMILIAS</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="calendario.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Calendario Escolar
+                        </a></li>
+                        <li class="mb-2"><a href="orientacion.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Área de Orientación
+                        </a></li>
+                        <li class="mb-2"><a href="pevau.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> PEVAU
+                        </a></li>
+                        <li class="mb-2"><a href="ipasen.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> IPASEN (Manuales)
+                        </a></li>
+                        <li class="mb-2"><a href="becas.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Becas 24/25
+                        </a></li>
+                        <li><a href="ampa.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> AMPA
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h4 class="h5 mb-3 border-bottom pb-2 text-white">ENLACES INSTITUCIONALES</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://www.juntadeandalucia.es/educacion" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Consejería de Educación
+                        </a></li>
+                        <li class="mb-2"><a href="https://www.juntadeandalucia.es" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Junta de Andalucía
+                        </a></li>
+                        <li class="mb-2"><a href="plan-centro.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Plan de Centro
+                        </a></li>
+                        <li class="mb-2"><a href="convivencia.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Plan de Convivencia
+                        </a></li>
+                        <li class="mb-2"><a href="biblioteca.html" class="footer-link d-flex align-items-center">
+                            <i class="bi bi-chevron-right text-primary me-2"></i> Biblioteca
+                        </a></li>
+                    </ul>
+                    
+                    <h4 class="h5 mb-3 mt-4 border-bottom pb-2 text-white">CONECTA CON NOSOTROS</h4>
+                    <div class="mb-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-5 pt-3 border-top text-center">
+                <p class="small mb-1">© 2025 IES Antonio Domínguez Ortiz. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
