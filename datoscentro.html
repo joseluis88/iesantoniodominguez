@@ -6,22 +6,19 @@
     <title>Datos del Centro - IES Antonio Domínguez Ortiz</title>
     <meta name="description" content="Información institucional del IES Antonio Domínguez Ortiz. Conoce nuestra historia, instalaciones y oferta educativa.">
     
-    <!-- Preconexión para mejorar rendimiento -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     
     <style>
         :root {
-            --color-primario: #0056a3;       /* Azul institucional */
-            --color-secundario: #4caf50;     /* Verde */
-            --color-fondo: #f8f9fa;          /* Fondo gris claro */
-            --color-texto: #333;             /* Texto principal */
+            --color-primario: #0056a3;       
+            --color-secundario: #4caf50;   
+            --color-fondo: #f8f9fa;          
+            --color-texto: #333;             
         }
         
         body {
@@ -31,7 +28,6 @@
             line-height: 1.6;
         }
         
-        /* Header */
         .header {
             background: linear-gradient(135deg, var(--color-primario) 0%, #003366 100%);
             color: white;
@@ -58,7 +54,6 @@
             transform: scale(1.05);
         }
         
-        /* Barra de navegación */
         .navbar {
             background-color: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
@@ -108,14 +103,16 @@
         .dropdown-item:hover, 
         .dropdown-item:focus {
             background-color: var(--color-secundario);
+            background-size: cover;
+            background-position: center;
             color: white;
             padding-left: 1.75rem;
         }
         
-        /* Hero section */
         .hero-datos {
-            background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8)), 
-                        url('recursos/imagenes/edificio-centro.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8));
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 4rem 0;
             margin-bottom: 3rem;
@@ -132,7 +129,6 @@
             padding: 0.5rem 1rem;
         }
         
-        /* Tarjetas de información */
         .info-card {
             border-radius: 8px;
             border-left: 5px solid var(--color-secundario);
@@ -179,7 +175,6 @@
             min-width: 25px;
         }
         
-        /* Lista de características */
         .feature-list {
             list-style-type: none;
             padding-left: 0;
@@ -202,7 +197,6 @@
             min-width: 25px;
         }
         
-        /* Mapa del centro */
         .map-container {
             border-radius: 8px;
             overflow: hidden;
@@ -217,7 +211,6 @@
             border: none;
         }
         
-        /* Galería de imágenes */
         .gallery-item {
             border-radius: 8px;
             overflow: hidden;
@@ -237,7 +230,6 @@
             object-fit: cover;
         }
         
-        /* Títulos de sección */
         .section-title {
             position: relative;
             padding-bottom: 0.75rem;
@@ -255,7 +247,6 @@
             background-color: var(--color-secundario);
         }
         
-        /* Footer mejorado */
         footer {
             background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
             color: white;
@@ -306,7 +297,6 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive */
         @media (max-width: 767.98px) {
             .header, .hero-datos {
                 padding: 2rem 0;
@@ -319,7 +309,7 @@
     </style>
 </head>
 <body>
-    <!-- Cabecera institucional -->
+    <!--Cabecera -->
     <header class="header">
         <div class="container">
             <div class="row align-items-center">
@@ -334,7 +324,7 @@
         </div>
     </header>
 
-    <!-- Barra de navegación principal -->
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -346,20 +336,32 @@
                         <a class="nav-link" href="index.html">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
                             NUESTRO CENTRO
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item active" href="datoscentro.html"><i class="bi bi-building me-2"></i>Datos del Centro</a></li>
+                            <li><a class="dropdown-item" href="datoscentro.html"><i class="bi bi-building me-2"></i>Datos del Centro</a></li>
                             <li><a class="dropdown-item" href="ofertaeducativa.html"><i class="bi bi-book me-2"></i>Oferta Educativa</a></li>
-                            <li><a class="dropdown-item" href="plan-centro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
-                            <li><a class="dropdown-item" href="plan-acogida.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
+                            <li><a class="dropdown-item" href="plandecentro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
+                            <li><a class="dropdown-item" href="plandeacodiga.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
                             <li><a class="dropdown-item" href="biblioteca.html"><i class="bi bi-bookmarks me-2"></i>Biblioteca</a></li>
-                            <li><a class="dropdown-item" href="convivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
+                            <li><a class="dropdown-item" href="planconvivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="familias.html">FAMILIAS</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarFamilias" role="button" data-bs-toggle="dropdown">
+                            FAMILIAS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="calendarioescolar.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html"><i class="bi bi-people me-2"></i>Área de orientación</a></li>
+                            <li><a class="dropdown-item" href="pevau.html"><i class="bi bi-mortarboard me-2"></i>PEVAU</a></li>
+                            <li><a class="dropdown-item" href="ipasen.html"><i class="bi bi-phone me-2"></i>IPASEN</a></li>
+                            <li><a class="dropdown-item" href="becas.html"><i class="bi bi-wallet2 me-2"></i>Becas Generales 24/25</a></li>
+                            <li><a class="dropdown-item" href="ayudas.html"><i class="bi bi-cash-coin me-2"></i>Ayudas</a></li>
+                            <li><a class="dropdown-item" href="neae.html"><i class="bi bi-heart-pulse me-2"></i>NEAE</a></li>
+                            <li><a class="dropdown-item" href="ampa.html"><i class="bi bi-heart me-2"></i>AMPA</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profesorado.html">PROFESORADO</a>
@@ -383,14 +385,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-datos">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                  <li class="breadcrumb-item"><a href="#">Nuestro Centro</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Datos del Centro</li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Datos del Centro</li>
                 </ol>
             </nav>
             <h1 class="display-4 fw-bold mb-3">Datos del Centro</h1>
@@ -398,9 +399,8 @@
         </div>
     </section>
 
-    <!-- Contenido principal -->
+    <!--Contenido -->
     <main class="container mb-5">
-        <!-- Sección de información básica -->
         <section class="row mb-5">
             <div class="col-lg-6 mb-4">
                 <h2 class="section-title">Información General</h2>
@@ -490,7 +490,6 @@
             </div>
         </section>
         
-        <!-- Mapa y localización -->
         <section class="mb-5">
             <h2 class="section-title">Localización</h2>
             <div class="row">
@@ -516,7 +515,6 @@
             </div>
         </section>
         
-        <!-- Galería de imágenes -->
         <section class="mb-5">
             <h2 class="section-title">Galería de Imágenes</h2>
             <div class="row g-4">
@@ -548,7 +546,7 @@
         </section>
     </main>
 
-    <!-- Footer institucional -->
+    <!--Footer-->
     <footer>
         <div class="container">
             <div class="row g-4">
@@ -591,7 +589,7 @@
                             <i class="bi bi-chevron-right text-primary me-2"></i> PEVAU
                         </a></li>
                         <li class="mb-2"><a href="ipasen.html" class="footer-link d-flex align-items-center">
-                            <i class="bi bi-chevron-right text-primary me-2"></i> IPASEN (Manuales)
+                            <i class="bi bi-chevron-right text-primary me-2"></i> IPASEN
                         </a></li>
                         <li class="mb-2"><a href="becas.html" class="footer-link d-flex align-items-center">
                             <i class="bi bi-chevron-right text-primary me-2"></i> Becas 24/25
@@ -639,10 +637,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script para carga progresiva -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Lazy loading para imágenes
             if ('IntersectionObserver' in window) {
                 const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
                 const lazyImageObserver = new IntersectionObserver(function(entries, observer) {

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesorado - IES Antonio Domínguez Ortiz</title>
-    <meta name="description" content="Área de profesorado del IES Antonio Domínguez Ortiz. Departamentos, criterios de calificación, recursos y toda la información relevante para el equipo docente.">
+    <title>Plan de Acogida - IES Antonio Domínguez Ortiz</title>
+    <meta name="description" content="Plan de Acogida para nuevos estudiantes, familias y profesorado del IES Antonio Domínguez Ortiz de Sevilla.">
     
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -15,13 +15,10 @@
     
     <style>
         :root {
-            --color-primario: #0056a3;      
-            --color-secundario: #4caf50;    
-            --color-fondo: #f8f9fa;         
-            --color-texto: #333;            
-            --sombra-card: 0 5px 15px rgba(0,0,0,0.1);
-            --sombra-card-hover: 0 10px 25px rgba(0,0,0,0.15);
-            --transicion: all 0.3s ease;
+            --color-primario: #0056a3;
+            --color-secundario: #4caf50;
+            --color-fondo: #f8f9fa;
+            --color-texto: #333;
         }
         
         body {
@@ -52,7 +49,7 @@
             max-height: 90px;
             transition: transform 0.3s ease;
         }
-        
+
         .logo img:hover {
             transform: scale(1.05);
         }
@@ -63,11 +60,15 @@
             padding: 0.5rem 0;
         }
         
+        .navbar-brand img {
+            height: 40px;
+        }
+        
         .navbar-nav .nav-link {
             color: var(--color-primario);
             font-weight: 600;
             padding: 0.75rem 1.25rem;
-            transition: var(--transicion);
+            transition: all 0.3s ease;
             position: relative;
         }
         
@@ -105,22 +106,22 @@
             color: white;
             padding-left: 1.75rem;
         }
-
-        .hero-profesorado {
+        
+        .hero-acogida {
             background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8));
             background-size: cover;
             background-position: center;
             color: white;
             padding: 4rem 0;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
-        
-        .hero-profesorado h1 {
+
+        .hero-acogida h1 {
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
-        .hero-profesorado .breadcrumb {
+        .hero-acogida .breadcrumb {
             background-color: rgba(255,255,255,0.2);
             border-radius: 20px;
             padding: 0.5rem 1rem;
@@ -129,15 +130,15 @@
         .info-card {
             border-radius: 8px;
             border-left: 5px solid var(--color-secundario);
-            transition: var(--transicion);
             background-color: white;
-            box-shadow: var(--sombra-card);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             height: 100%;
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
         }
 
         .info-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--sombra-card-hover);
         }
 
         .info-card .card-header {
@@ -145,40 +146,29 @@
             color: white;
             font-weight: 600;
             border-bottom: none;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
         }
 
         .info-card .card-body {
             padding: 1.5rem;
         }
 
-        .feature-list {
+        .icon-list {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .feature-list li {
+        .icon-list li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
+            position: relative;
+            padding-left: 2rem;
         }
 
-        .feature-list i {
+        .icon-list i {
             color: var(--color-secundario);
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
-            min-width: 25px;
-        }
-        
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(0, 86, 163, 0.1);
-            color: var(--color-primario);
-        }
-        
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,.125);
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
         }
         
         .section-title {
@@ -249,7 +239,7 @@
         }
         
         @media (max-width: 767.98px) {
-            .header, .hero-profesorado {
+            .header, .hero-acogida {
                 padding: 2rem 0;
             }
             
@@ -275,7 +265,7 @@
         </div>
     </header>
 
-    <!--Barra de navegación -->
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -304,7 +294,7 @@
                             FAMILIAS
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="calendario.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="calendarioescolar.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
                             <li><a class="dropdown-item" href="orientacion.html"><i class="bi bi-people me-2"></i>Área de orientación</a></li>
                             <li><a class="dropdown-item" href="pevau.html"><i class="bi bi-mortarboard me-2"></i>PEVAU</a></li>
                             <li><a class="dropdown-item" href="ipasen.html"><i class="bi bi-phone me-2"></i>IPASEN</a></li>
@@ -315,7 +305,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profesorado.html">PROFESORADO</a>
+                        <a class="nav-link" href="profesorado.html">PROFESORADO</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarProyectos" role="button" data-bs-toggle="dropdown">
@@ -336,16 +326,17 @@
         </div>
     </nav>
 
-    <section class="hero-profesorado">
+    <section class="hero-acogida">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
-                  <li class="breadcrumb-item active text-white" aria-current="page">Profesorado</li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Plan de Acogida</li>
                 </ol>
             </nav>
-            <h1 class="display-4 fw-bold mb-3">Área de Profesorado</h1>
-            <p class="lead mb-0">Recursos e información para el equipo docente del IES Antonio Domínguez Ortiz</p>
+            <h1 class="display-4 fw-bold mb-3">Plan de Acogida</h1>
+            <p class="lead mb-0">Bienvenida e integración de nuevos estudiantes, familias y profesorado</p>
         </div>
     </section>
 
@@ -354,335 +345,183 @@
         <section class="mb-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead">En esta sección encontrará toda la información relevante para el profesorado, incluyendo departamentos, criterios de calificación, tutorías y recursos educativos.</p>
+                    <p class="lead">El Plan de Acogida del IES Antonio Domínguez Ortiz tiene como objetivo facilitar la integración de nuevos estudiantes, familias y profesorado en nuestra comunidad educativa, promoviendo un clima de convivencia positivo desde el primer momento.</p>
                 </div>
             </div>
         </section>
         
         <section class="mb-5">
-            <h2 class="section-title">Departamentos</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-gear me-2"></i>Ciencia y Tecnología
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Marta Velázquez Rojas</p>
-                            <p>Materias impartidas: Matemáticas, Tecnología, Física y Química</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-book me-2"></i>Sociolingüístico
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Cristina Azcona González</p>
-                            <p>Materias impartidas: Lengua Castellana, Geografía e Historia</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-palette me-2"></i>Cultural y Artístico
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> María José Chamizo Pizarro</p>
-                            <p>Materias impartidas: Música, Educación Plástica</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-globe me-2"></i>Idiomas
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Pastora Raquel Espinosa Casado</p>
-                            <p>Materias impartidas: Inglés, Francés</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-heart-pulse me-2"></i>Ciencias para la Vida
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Mar Quirantes López</p>
-                            <p>Materias impartidas: Biología, Educación Física</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Informática
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Ana María Casado Pérez</p>
-                            <p>Materias impartidas: Informática, TIC</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-people me-2"></i>Orientación
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Sonia Pérez Mejías</p>
-                            <p>Materias impartidas: Orientación, NEAE</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-bookmark-heart me-2"></i>Religión
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefe de Departamento:</strong> Por determinar</p>
-                            <p>Materias impartidas: Religión, Valores Éticos</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Tutorías</h2>
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="bi bi-person-lines-fill me-2"></i>Asignación de tutorías
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-primary">
-                                <tr>
-                                    <th>Cursos</th>
-                                    <th>Profesorado tutor</th>
-                                    <th>Orientación</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1º ESO A</td>
-                                    <td>Manuel David Cortés Fuentes</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>1º ESO B</td>
-                                    <td>Yolanda Sánchez Ruiz</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>2º ESO A</td>
-                                    <td>Sergio Martínez Pérez</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º ESO B</td>
-                                    <td>María Pilar García Pérez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO A</td>
-                                    <td>Marga González Mancilla</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO B</td>
-                                    <td>María Cristina Azcona González</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º DIVER</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO A</td>
-                                    <td>Lucía García De Oya</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO B</td>
-                                    <td>Laura Cárdenas García</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º DIVER</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º BACH</td>
-                                    <td>Patricia Vera Morales</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º BACH</td>
-                                    <td>Beatriz Cabeza Barrera</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.B.</td>
-                                    <td>Miguel Moreno Gotor</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.B.</td>
-                                    <td>María Luisa Ferrero Rodríguez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.M.</td>
-                                    <td>Carlos Javier Amate Hernández</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.M.</td>
-                                    <td>Ana María Casado Pérez</td>
-                                    <td>-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Criterios de Calificación</h2>
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="bi bi-clipboard-check me-2"></i>Criterios generales de evaluación
-                </div>
-                <div class="card-body">
-                    <div class="accordion" id="criteriosAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Criterios comunes para todas las materias
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Asistencia y participación: 20%</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajo en clase y tareas: 30%</li>
-                                        <li><i class="bi bi-check-circle"></i> Pruebas escritas/orales: 50%</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Criterios específicos por departamento
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <p>Consulte los criterios específicos de cada departamento en sus respectivas secciones o descargue el documento completo:</p>
-                                    <a href="#" class="btn btn-primary">
-                                        <i class="bi bi-download me-2"></i> Descargar criterios completos
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Recuperación y evaluación extraordinaria
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Pruebas de recuperación por trimestres</li>
-                                        <li><i class="bi bi-check-circle"></i> Evaluación extraordinaria en junio</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajos específicos para recuperación</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="mb-5">
-            <h2 class="section-title">Recursos para el Profesorado</h2>
+            <h2 class="section-title">Acogida para estudiantes</h2>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="info-card h-100">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Séneca
+                            <i class="bi bi-people-fill me-2"></i>Alumnado de 1º ESO
                         </div>
                         <div class="card-body">
-                            <p>Acceso al portal Séneca para profesorado con todas las herramientas administrativas y docentes.</p>
-                            <div class="d-grid gap-2 mt-3">
-                                <a href="https://seneca.juntadeandalucia.es/seneca/jsp/portal/" class="btn btn-outline-primary" target="_blank">
-                                    <i class="bi bi-box-arrow-up-right me-2"></i> Acceder a Séneca
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary">
-                                    <i class="bi bi-book me-2"></i> Manual de uso
-                                </a>
-                            </div>
+                            <h5 class="card-title">Programa de transición de Primaria a Secundaria</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Jornada de puertas abiertas para futuros estudiantes y familias</li>
+                                <li><i class="bi bi-check-circle"></i> Visita guiada al centro antes del inicio del curso</li>
+                                <li><i class="bi bi-check-circle"></i> Actividades de conocimiento entre compañeros</li>
+                                <li><i class="bi bi-check-circle"></i> Tutorías específicas de adaptación</li>
+                                <li><i class="bi bi-check-circle"></i> Programa de alumnos mentores de cursos superiores</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="info-card h-100">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-file-earmark-text me-2"></i>Documentación importante
+                            <i class="bi bi-person-plus me-2"></i>Alumnado de nueva incorporación
                         </div>
                         <div class="card-body">
-                            <ul class="feature-list">
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Plan de Centro</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Programaciones didácticas</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Protocolo COVID-19</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Reglamento de Régimen Interior</a></li>
+                            <h5 class="card-title">Protocolo para estudiantes que se incorporan durante el curso</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Entrevista inicial con Jefatura de Estudios y Orientación</li>
+                                <li><i class="bi bi-check-circle"></i> Asignación de un compañero tutor</li>
+                                <li><i class="bi bi-check-circle"></i> Información sobre normas y funcionamiento del centro</li>
+                                <li><i class="bi bi-check-circle"></i> Evaluación inicial para adaptación curricular si procede</li>
+                                <li><i class="bi bi-check-circle"></i> Seguimiento durante el primer trimestre</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Acogida para familias</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-house-door me-2"></i>Familias nuevas en el centro
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Información y participación</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Reunión general inicial con el equipo directivo</li>
+                                <li><i class="bi bi-check-circle"></i> Guía informativa sobre organización y funcionamiento</li>
+                                <li><i class="bi bi-check-circle"></i> Presentación del equipo docente y tutor/a</li>
+                                <li><i class="bi bi-check-circle"></i> Talleres sobre plataformas digitales (Séneca, IPASEN)</li>
+                                <li><i class="bi bi-check-circle"></i> Información sobre AMPA y participación en el centro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-chat-square-text me-2"></i>Comunicación familia-centro
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Canales de comunicación establecidos</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Tutorías individualizadas periódicas</li>
+                                <li><i class="bi bi-check-circle"></i> Plataforma Séneca/Pasen para seguimiento académico</li>
+                                <li><i class="bi bi-check-circle"></i> Correo electrónico institucional</li>
+                                <li><i class="bi bi-check-circle"></i> Teléfono de contacto y horario de atención</li>
+                                <li><i class="bi bi-check-circle"></i> Tablón de anuncios y web del centro</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Acogida para nuevo profesorado</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-person-badge me-2"></i>Profesorado de nueva incorporación
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Protocolo de acogida docente</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Jornada de bienvenida con el equipo directivo</li>
+                                <li><i class="bi bi-check-circle"></i> Entrega de documentación relevante (PEC, ROF, etc.)</li>
+                                <li><i class="bi bi-check-circle"></i> Asignación de un profesor tutor de referencia</li>
+                                <li><i class="bi bi-check-circle"></i> Información sobre recursos y materiales disponibles</li>
+                                <li><i class="bi bi-check-circle"></i> Presentación en claustro y departamentos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-book me-2"></i>Recursos para docentes
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Materiales y apoyo disponible</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Manual de funcionamiento del centro</li>
+                                <li><i class="bi bi-check-circle"></i> Acceso a plataformas digitales y recursos TIC</li>
+                                <li><i class="bi bi-check-circle"></i> Formación específica sobre proyectos del centro</li>
+                                <li><i class="bi bi-check-circle"></i> Reuniones de coordinación inicial</li>
+                                <li><i class="bi bi-check-circle"></i> Programa de mentoría entre iguales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Documentación y recursos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-file-earmark-pdf me-2"></i>Documentos para descargar
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Guía de acogida para estudiantes</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Manual para familias</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Protocolo de acogida docente</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Calendario escolar</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Normas de convivencia</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-calendar-check me-2"></i>Calendario de acogida
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-calendar-event"></i> <strong>1-5 Sept:</strong> Jornadas de acogida profesorado</li>
+                                <li><i class="bi bi-calendar-event"></i> <strong>10 Sept:</strong> Reunión familias 1º ESO</li>
+                                <li><i class="bi bi-calendar-event"></i> <strong>12-14 Sept:</strong> Jornadas adaptación 1º ESO</li>
+                                <li><i class="bi bi-calendar-event"></i> <strong>15 Sept:</strong> Inicio curso general</li>
+                                <li><i class="bi bi-calendar-event"></i> <strong>Octubre:</strong> Evaluación inicial proceso acogida</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-question-circle me-2"></i>Contacto y preguntas
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-envelope"></i> acogida@iesado.org</li>
+                                <li><i class="bi bi-telephone"></i> 955 123 456 (Ext. 201)</li>
+                                <li><i class="bi bi-person"></i> Coordinadora: María Luisa Ferrero</li>
+                                <li><i class="bi bi-clock"></i> Atención: Lunes y Miércoles 10:00-12:00</li>
+                                <li><i class="bi bi-geo-alt"></i> Despacho de Orientación (Planta baja)</li>
                             </ul>
                         </div>
                     </div>
@@ -691,6 +530,7 @@
         </section>
     </main>
 
+    <!--Footer -->
     <footer>
         <div class="container">
             <div class="row g-4">
@@ -778,3 +618,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

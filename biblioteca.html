@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesorado - IES Antonio Domínguez Ortiz</title>
-    <meta name="description" content="Área de profesorado del IES Antonio Domínguez Ortiz. Departamentos, criterios de calificación, recursos y toda la información relevante para el equipo docente.">
+    <title>Biblioteca - IES Antonio Domínguez Ortiz</title>
+    <meta name="description" content="Biblioteca escolar del IES Antonio Domínguez Ortiz. Horario, servicios, catálogo y recursos disponibles.">
     
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     
     <style>
         :root {
             --color-primario: #0056a3;      
             --color-secundario: #4caf50;    
-            --color-fondo: #f8f9fa;         
+            --color-fondo: #f8f9fa;        
             --color-texto: #333;            
             --sombra-card: 0 5px 15px rgba(0,0,0,0.1);
             --sombra-card-hover: 0 10px 25px rgba(0,0,0,0.15);
@@ -105,8 +105,8 @@
             color: white;
             padding-left: 1.75rem;
         }
-
-        .hero-profesorado {
+        
+        .hero-biblioteca {
             background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8));
             background-size: cover;
             background-position: center;
@@ -115,12 +115,12 @@
             margin-bottom: 3rem;
         }
         
-        .hero-profesorado h1 {
+        .hero-biblioteca h1 {
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
-        .hero-profesorado .breadcrumb {
+        .hero-biblioteca .breadcrumb {
             background-color: rgba(255,255,255,0.2);
             border-radius: 20px;
             padding: 0.5rem 1rem;
@@ -133,6 +133,7 @@
             background-color: white;
             box-shadow: var(--sombra-card);
             height: 100%;
+            margin-left: 0.5rem;
         }
 
         .info-card:hover {
@@ -154,7 +155,7 @@
 
         .feature-list {
             list-style-type: none;
-            padding-left: 0;
+            padding-left: 0.5rem;
         }
 
         .feature-list li {
@@ -171,14 +172,27 @@
             min-width: 25px;
         }
         
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(0, 86, 163, 0.1);
-            color: var(--color-primario);
+        .book-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--sombra-card);
+            transition: var(--transicion);
+            height: 100%;
         }
         
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,.125);
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-card-hover);
+        }
+        
+        .book-cover {
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .book-cover:hover {
+            transform: scale(1.05);
         }
         
         .section-title {
@@ -249,12 +263,16 @@
         }
         
         @media (max-width: 767.98px) {
-            .header, .hero-profesorado {
+            .header, .hero-biblioteca {
                 padding: 2rem 0;
             }
             
             .logo img {
                 max-height: 70px;
+            }
+            
+            .book-cover {
+                height: 200px;
             }
         }
     </style>
@@ -275,7 +293,7 @@
         </div>
     </header>
 
-    <!--Barra de navegación -->
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -287,7 +305,7 @@
                         <a class="nav-link" href="index.html">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             NUESTRO CENTRO
                         </a>
                         <ul class="dropdown-menu">
@@ -295,7 +313,7 @@
                             <li><a class="dropdown-item" href="ofertaeducativa.html"><i class="bi bi-book me-2"></i>Oferta Educativa</a></li>
                             <li><a class="dropdown-item" href="plandecentro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
                             <li><a class="dropdown-item" href="plandeacodiga.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
-                            <li><a class="dropdown-item" href="biblioteca.html"><i class="bi bi-bookmarks me-2"></i>Biblioteca</a></li>
+                            <li><a class="dropdown-item active" href="biblioteca.html"><i class="bi bi-bookmarks me-2"></i>Biblioteca</a></li>
                             <li><a class="dropdown-item" href="planconvivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
                         </ul>
                     </li>
@@ -304,7 +322,7 @@
                             FAMILIAS
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="calendario.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="calendarioescolar.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
                             <li><a class="dropdown-item" href="orientacion.html"><i class="bi bi-people me-2"></i>Área de orientación</a></li>
                             <li><a class="dropdown-item" href="pevau.html"><i class="bi bi-mortarboard me-2"></i>PEVAU</a></li>
                             <li><a class="dropdown-item" href="ipasen.html"><i class="bi bi-phone me-2"></i>IPASEN</a></li>
@@ -315,7 +333,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profesorado.html">PROFESORADO</a>
+                        <a class="nav-link" href="profesorado.html">PROFESORADO</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarProyectos" role="button" data-bs-toggle="dropdown">
@@ -336,314 +354,76 @@
         </div>
     </nav>
 
-    <section class="hero-profesorado">
+    <section class="hero-biblioteca">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
-                  <li class="breadcrumb-item active text-white" aria-current="page">Profesorado</li>
+                  <li class="breadcrumb-item"><a href="#" class="text-white">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Biblioteca</li>
                 </ol>
             </nav>
-            <h1 class="display-4 fw-bold mb-3">Área de Profesorado</h1>
-            <p class="lead mb-0">Recursos e información para el equipo docente del IES Antonio Domínguez Ortiz</p>
+            <h1 class="display-4 fw-bold mb-3">Biblioteca Escolar</h1>
+            <p class="lead mb-0">Un espacio para aprender, leer y descubrir</p>
         </div>
     </section>
 
-    <!--Contenido -->
     <main class="container mb-5">
-        <section class="mb-5">
+        <section class="mb-5 text-center">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead">En esta sección encontrará toda la información relevante para el profesorado, incluyendo departamentos, criterios de calificación, tutorías y recursos educativos.</p>
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead">Nuestra biblioteca es un centro de recursos para el aprendizaje y disfrute de toda la comunidad educativa. Con más de 8,000 volúmenes y recursos digitales, fomentamos el hábito lector y apoyamos los proyectos educativos.</p>
                 </div>
             </div>
         </section>
-        
+
         <section class="mb-5">
-            <h2 class="section-title">Departamentos</h2>
+            <h2 class="section-title">Nuestros servicios</h2>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
+                <div class="col-md-4">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-gear me-2"></i>Ciencia y Tecnología
+                            <i class="bi bi-book me-2"></i>Préstamo de libros
                         </div>
                         <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Marta Velázquez Rojas</p>
-                            <p>Materias impartidas: Matemáticas, Tecnología, Física y Química</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle"></i> 2 libros por 15 días (alumnos)</li>
+                                <li><i class="bi bi-check-circle"></i> 5 libros por 30 días (profesores)</li>
+                                <li><i class="bi bi-check-circle"></i> Renovación por igual periodo</li>
+                                <li><i class="bi bi-check-circle"></i> Reserva de ejemplares</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
+                
+                <div class="col-md-4">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-book me-2"></i>Sociolingüístico
+                            <i class="bi bi-laptop me-2"></i>Recursos digitales
                         </div>
                         <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Cristina Azcona González</p>
-                            <p>Materias impartidas: Lengua Castellana, Geografía e Historia</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle"></i> Catálogo en línea</li>
+                                <li><i class="bi bi-check-circle"></i> Libros electrónicos</li>
+                                <li><i class="bi bi-check-circle"></i> Bases de datos</li>
+                                <li><i class="bi bi-check-circle"></i> Prensa digital</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
+                
+                <div class="col-md-4">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-palette me-2"></i>Cultural y Artístico
+                            <i class="bi bi-people me-2"></i>Espacios y actividades
                         </div>
                         <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> María José Chamizo Pizarro</p>
-                            <p>Materias impartidas: Música, Educación Plástica</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-globe me-2"></i>Idiomas
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Pastora Raquel Espinosa Casado</p>
-                            <p>Materias impartidas: Inglés, Francés</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-heart-pulse me-2"></i>Ciencias para la Vida
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Mar Quirantes López</p>
-                            <p>Materias impartidas: Biología, Educación Física</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Informática
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Ana María Casado Pérez</p>
-                            <p>Materias impartidas: Informática, TIC</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-people me-2"></i>Orientación
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Sonia Pérez Mejías</p>
-                            <p>Materias impartidas: Orientación, NEAE</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-bookmark-heart me-2"></i>Religión
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefe de Departamento:</strong> Por determinar</p>
-                            <p>Materias impartidas: Religión, Valores Éticos</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Tutorías</h2>
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="bi bi-person-lines-fill me-2"></i>Asignación de tutorías
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-primary">
-                                <tr>
-                                    <th>Cursos</th>
-                                    <th>Profesorado tutor</th>
-                                    <th>Orientación</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1º ESO A</td>
-                                    <td>Manuel David Cortés Fuentes</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>1º ESO B</td>
-                                    <td>Yolanda Sánchez Ruiz</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>2º ESO A</td>
-                                    <td>Sergio Martínez Pérez</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º ESO B</td>
-                                    <td>María Pilar García Pérez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO A</td>
-                                    <td>Marga González Mancilla</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO B</td>
-                                    <td>María Cristina Azcona González</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º DIVER</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO A</td>
-                                    <td>Lucía García De Oya</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO B</td>
-                                    <td>Laura Cárdenas García</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º DIVER</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º BACH</td>
-                                    <td>Patricia Vera Morales</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º BACH</td>
-                                    <td>Beatriz Cabeza Barrera</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.B.</td>
-                                    <td>Miguel Moreno Gotor</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.B.</td>
-                                    <td>María Luisa Ferrero Rodríguez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.M.</td>
-                                    <td>Carlos Javier Amate Hernández</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.M.</td>
-                                    <td>Ana María Casado Pérez</td>
-                                    <td>-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Criterios de Calificación</h2>
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="bi bi-clipboard-check me-2"></i>Criterios generales de evaluación
-                </div>
-                <div class="card-body">
-                    <div class="accordion" id="criteriosAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Criterios comunes para todas las materias
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Asistencia y participación: 20%</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajo en clase y tareas: 30%</li>
-                                        <li><i class="bi bi-check-circle"></i> Pruebas escritas/orales: 50%</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Criterios específicos por departamento
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <p>Consulte los criterios específicos de cada departamento en sus respectivas secciones o descargue el documento completo:</p>
-                                    <a href="#" class="btn btn-primary">
-                                        <i class="bi bi-download me-2"></i> Descargar criterios completos
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Recuperación y evaluación extraordinaria
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Pruebas de recuperación por trimestres</li>
-                                        <li><i class="bi bi-check-circle"></i> Evaluación extraordinaria en junio</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajos específicos para recuperación</li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-check-circle"></i> Zona de estudio</li>
+                                <li><i class="bi bi-check-circle"></i> Club de lectura</li>
+                                <li><i class="bi bi-check-circle"></i> Talleres literarios</li>
+                                <li><i class="bi bi-check-circle"></i> Encuentros con autores</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -651,38 +431,102 @@
         </section>
         
         <section class="mb-5">
-            <h2 class="section-title">Recursos para el Profesorado</h2>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="info-card h-100">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Séneca
+                            <i class="bi bi-clock me-2"></i>Horario
                         </div>
                         <div class="card-body">
-                            <p>Acceso al portal Séneca para profesorado con todas las herramientas administrativas y docentes.</p>
-                            <div class="d-grid gap-2 mt-3">
-                                <a href="https://seneca.juntadeandalucia.es/seneca/jsp/portal/" class="btn btn-outline-primary" target="_blank">
-                                    <i class="bi bi-box-arrow-up-right me-2"></i> Acceder a Séneca
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary">
-                                    <i class="bi bi-book me-2"></i> Manual de uso
-                                </a>
-                            </div>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-calendar-week"></i> Lunes a viernes: 8:30 - 14:30</li>
+                                <li><i class="bi bi-alarm"></i> Recreo: Abierto para préstamos</li>
+                                <li><i class="bi bi-calendar-check"></i> Grupos: Con cita previa</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="info-card h-100">
+                    <div class="info-card">
                         <div class="card-header">
-                            <i class="bi bi-file-earmark-text me-2"></i>Documentación importante
+                            <i class="bi bi-journal-bookmark me-2"></i>Normas
                         </div>
                         <div class="card-body">
                             <ul class="feature-list">
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Plan de Centro</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Programaciones didácticas</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Protocolo COVID-19</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Reglamento de Régimen Interior</a></li>
+                                <li><i class="bi bi-check-circle"></i> Respetar el silencio</li>
+                                <li><i class="bi bi-check-circle"></i> No comer ni beber</li>
+                                <li><i class="bi bi-check-circle"></i> Cuidar los materiales</li>
+                                <li><i class="bi bi-check-circle"></i> Devolver los libros en plazo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Novedades y recomendaciones</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="book-card">
+                        <img src="recursos/imagenes/libro1.jpg" class="book-cover w-100" alt="Portada libro" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">El infinito en un junco</h5>
+                            <p class="card-text text-muted small">Irene Vallejo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card">
+                        <img src="recursos/imagenes/libro2.jpg" class="book-cover w-100" alt="Portada libro" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">Todo lo que nunca fuimos</h5>
+                            <p class="card-text text-muted small">Alice Kellen</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card">
+                        <img src="recursos/imagenes/libro3.jpg" class="book-cover w-100" alt="Portada libro" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">La ciudad de vapor</h5>
+                            <p class="card-text text-muted small">Carlos Ruiz Zafón</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="book-card">
+                        <img src="recursos/imagenes/libro4.jpg" class="book-cover w-100" alt="Portada libro" loading="lazy">
+                        <div class="card-body">
+                            <h5 class="card-title">El chico de la flecha</h5>
+                            <p class="card-text text-muted small">Espido Freire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary px-4">
+                    <i class="bi bi-search me-2"></i> Ver catálogo completo
+                </a>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Contacto y equipo</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="bi bi-person-lines-fill me-2"></i>Responsable
+                        </div>
+                        <div class="card-body">
+                            <p><strong>María José Chamizo Pizarro</strong></p>
+                            <ul class="feature-list">
+                                <li><i class="bi bi-envelope"></i> biblioteca@iesado.org</li>
+                                <li><i class="bi bi-telephone"></i> 955 123 456 (Ext. 205)</li>
+                                <li><i class="bi bi-clock"></i> Atención: L-V 12:00-13:30</li>
                             </ul>
                         </div>
                     </div>
@@ -691,6 +535,7 @@
         </section>
     </main>
 
+    <!--Footer-->
     <footer>
         <div class="container">
             <div class="row g-4">
@@ -778,3 +623,28 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if ('IntersectionObserver' in window) {
+                const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
+                const lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src || lazyImage.src;
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

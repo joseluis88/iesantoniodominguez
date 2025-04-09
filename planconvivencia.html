@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profesorado - IES Antonio Domínguez Ortiz</title>
-    <meta name="description" content="Área de profesorado del IES Antonio Domínguez Ortiz. Departamentos, criterios de calificación, recursos y toda la información relevante para el equipo docente.">
+    <title>Plan de Convivencia - IES Antonio Domínguez Ortiz</title>
+    <meta name="description" content="Plan de Convivencia del IES Antonio Domínguez Ortiz de Sevilla. Normas, protocolos y programas para fomentar la buena convivencia escolar.">
     
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     
     <style>
         :root {
-            --color-primario: #0056a3;      
-            --color-secundario: #4caf50;    
-            --color-fondo: #f8f9fa;         
-            --color-texto: #333;            
-            --sombra-card: 0 5px 15px rgba(0,0,0,0.1);
-            --sombra-card-hover: 0 10px 25px rgba(0,0,0,0.15);
-            --transicion: all 0.3s ease;
+            --color-primario: #0056a3;
+            --color-secundario: #4caf50;
+            --color-fondo: #f8f9fa;
+            --color-texto: #333;
         }
         
         body {
@@ -52,7 +49,7 @@
             max-height: 90px;
             transition: transform 0.3s ease;
         }
-        
+
         .logo img:hover {
             transform: scale(1.05);
         }
@@ -63,11 +60,15 @@
             padding: 0.5rem 0;
         }
         
+        .navbar-brand img {
+            height: 40px;
+        }
+        
         .navbar-nav .nav-link {
             color: var(--color-primario);
             font-weight: 600;
             padding: 0.75rem 1.25rem;
-            transition: var(--transicion);
+            transition: all 0.3s ease;
             position: relative;
         }
         
@@ -105,22 +106,22 @@
             color: white;
             padding-left: 1.75rem;
         }
-
-        .hero-profesorado {
+        
+        .hero-convivencia {
             background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8));
             background-size: cover;
             background-position: center;
             color: white;
             padding: 4rem 0;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
-        
-        .hero-profesorado h1 {
+
+        .hero-convivencia h1 {
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
-        .hero-profesorado .breadcrumb {
+        .hero-convivencia .breadcrumb {
             background-color: rgba(255,255,255,0.2);
             border-radius: 20px;
             padding: 0.5rem 1rem;
@@ -129,15 +130,15 @@
         .info-card {
             border-radius: 8px;
             border-left: 5px solid var(--color-secundario);
-            transition: var(--transicion);
             background-color: white;
-            box-shadow: var(--sombra-card);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             height: 100%;
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
         }
 
         .info-card:hover {
             transform: translateY(-5px);
-            box-shadow: var(--sombra-card-hover);
         }
 
         .info-card .card-header {
@@ -145,40 +146,29 @@
             color: white;
             font-weight: 600;
             border-bottom: none;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
         }
 
         .info-card .card-body {
             padding: 1.5rem;
         }
 
-        .feature-list {
+        .icon-list {
             list-style-type: none;
             padding-left: 0;
         }
 
-        .feature-list li {
+        .icon-list li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
+            position: relative;
+            padding-left: 2rem;
         }
 
-        .feature-list i {
+        .icon-list i {
             color: var(--color-secundario);
-            margin-right: 0.75rem;
-            font-size: 1.1rem;
-            min-width: 25px;
-        }
-        
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(0, 86, 163, 0.1);
-            color: var(--color-primario);
-        }
-        
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,.125);
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
         }
         
         .section-title {
@@ -196,6 +186,25 @@
             width: 60px;
             height: 3px;
             background-color: var(--color-secundario);
+        }
+        
+        .table-convivencia {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .table-convivencia thead {
+            background-color: var(--color-primario);
+            color: white;
+        }
+        
+        .table-convivencia th {
+            padding: 1rem;
+        }
+        
+        .table-convivencia td {
+            vertical-align: middle;
         }
         
         footer {
@@ -249,12 +258,16 @@
         }
         
         @media (max-width: 767.98px) {
-            .header, .hero-profesorado {
+            .header, .hero-convivencia {
                 padding: 2rem 0;
             }
             
             .logo img {
                 max-height: 70px;
+            }
+            
+            .table-responsive {
+                overflow-x: auto;
             }
         }
     </style>
@@ -304,7 +317,7 @@
                             FAMILIAS
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="calendario.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="calendarioescolar.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
                             <li><a class="dropdown-item" href="orientacion.html"><i class="bi bi-people me-2"></i>Área de orientación</a></li>
                             <li><a class="dropdown-item" href="pevau.html"><i class="bi bi-mortarboard me-2"></i>PEVAU</a></li>
                             <li><a class="dropdown-item" href="ipasen.html"><i class="bi bi-phone me-2"></i>IPASEN</a></li>
@@ -315,7 +328,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="profesorado.html">PROFESORADO</a>
+                        <a class="nav-link" href="profesorado.html">PROFESORADO</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarProyectos" role="button" data-bs-toggle="dropdown">
@@ -336,16 +349,17 @@
         </div>
     </nav>
 
-    <section class="hero-profesorado">
+    <section class="hero-convivencia">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
-                  <li class="breadcrumb-item active text-white" aria-current="page">Profesorado</li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Plan de Convivencia</li>
                 </ol>
             </nav>
-            <h1 class="display-4 fw-bold mb-3">Área de Profesorado</h1>
-            <p class="lead mb-0">Recursos e información para el equipo docente del IES Antonio Domínguez Ortiz</p>
+            <h1 class="display-4 fw-bold mb-3">Plan de Convivencia</h1>
+            <p class="lead mb-0">Construyendo un entorno escolar positivo y respetuoso</p>
         </div>
     </section>
 
@@ -354,232 +368,117 @@
         <section class="mb-5">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead">En esta sección encontrará toda la información relevante para el profesorado, incluyendo departamentos, criterios de calificación, tutorías y recursos educativos.</p>
+                    <p class="lead">El Plan de Convivencia del IES Antonio Domínguez Ortiz establece el marco de actuación para fomentar un clima escolar positivo basado en el respeto mutuo, la tolerancia y la participación de toda la comunidad educativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Objetivos y principios</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-bullseye me-2"></i>Objetivos generales
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Promover valores de respeto, tolerancia y solidaridad</li>
+                                <li><i class="bi bi-check-circle"></i> Prevenir situaciones de conflicto y acoso escolar</li>
+                                <li><i class="bi bi-check-circle"></i> Fomentar la participación de toda la comunidad educativa</li>
+                                <li><i class="bi bi-check-circle"></i> Desarrollar habilidades sociales y emocionales</li>
+                                <li><i class="bi bi-check-circle"></i> Garantizar un entorno seguro y libre de violencia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-lightbulb me-2"></i>Principios básicos
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Igualdad y no discriminación</li>
+                                <li><i class="bi bi-check-circle"></i> Resolución pacífica de conflictos</li>
+                                <li><i class="bi bi-check-circle"></i> Participación democrática</li>
+                                <li><i class="bi bi-check-circle"></i> Corresponsabilidad educativa</li>
+                                <li><i class="bi bi-check-circle"></i> Desarrollo integral de la persona</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section class="mb-5">
-            <h2 class="section-title">Departamentos</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-gear me-2"></i>Ciencia y Tecnología
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Marta Velázquez Rojas</p>
-                            <p>Materias impartidas: Matemáticas, Tecnología, Física y Química</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-book me-2"></i>Sociolingüístico
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Cristina Azcona González</p>
-                            <p>Materias impartidas: Lengua Castellana, Geografía e Historia</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-palette me-2"></i>Cultural y Artístico
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> María José Chamizo Pizarro</p>
-                            <p>Materias impartidas: Música, Educación Plástica</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-globe me-2"></i>Idiomas
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Pastora Raquel Espinosa Casado</p>
-                            <p>Materias impartidas: Inglés, Francés</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-heart-pulse me-2"></i>Ciencias para la Vida
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Mar Quirantes López</p>
-                            <p>Materias impartidas: Biología, Educación Física</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Informática
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Ana María Casado Pérez</p>
-                            <p>Materias impartidas: Informática, TIC</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-people me-2"></i>Orientación
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefa de Departamento:</strong> Sonia Pérez Mejías</p>
-                            <p>Materias impartidas: Orientación, NEAE</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card h-100">
-                        <div class="card-header">
-                            <i class="bi bi-bookmark-heart me-2"></i>Religión
-                        </div>
-                        <div class="card-body">
-                            <p><strong>Jefe de Departamento:</strong> Por determinar</p>
-                            <p>Materias impartidas: Religión, Valores Éticos</p>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">
-                                <i class="bi bi-folder me-2"></i> Documentación
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Tutorías</h2>
+            <h2 class="section-title">Normas de convivencia</h2>
             <div class="info-card">
                 <div class="card-header">
-                    <i class="bi bi-person-lines-fill me-2"></i>Asignación de tutorías
+                    <i class="bi bi-list-check me-2"></i>Derechos y deberes de la comunidad educativa
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead class="table-primary">
+                        <table class="table table-hover table-convivencia">
+                            <thead>
                                 <tr>
-                                    <th>Cursos</th>
-                                    <th>Profesorado tutor</th>
-                                    <th>Orientación</th>
+                                    <th>Colectivo</th>
+                                    <th>Derechos</th>
+                                    <th>Deberes</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1º ESO A</td>
-                                    <td>Manuel David Cortés Fuentes</td>
-                                    <td>Sonia Pérez Mejías</td>
+                                    <td><strong>Alumnado</strong></td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Recibir una educación de calidad</li>
+                                            <li><i class="bi bi-check2"></i> Ser tratado con respeto</li>
+                                            <li><i class="bi bi-check2"></i> Participar en la vida del centro</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Asistir a clase regularmente</li>
+                                            <li><i class="bi bi-check2"></i> Respetar a todos los miembros</li>
+                                            <li><i class="bi bi-check2"></i> Cumplir las normas del centro</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>1º ESO B</td>
-                                    <td>Yolanda Sánchez Ruiz</td>
-                                    <td>-</td>
+                                    <td><strong>Familias</strong></td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Ser informadas sobre el proceso educativo</li>
+                                            <li><i class="bi bi-check2"></i> Participar en los órganos de gobierno</li>
+                                            <li><i class="bi bi-check2"></i> Ser escuchadas en sus propuestas</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Apoyar el proceso educativo</li>
+                                            <li><i class="bi bi-check2"></i> Asistir a reuniones convocadas</li>
+                                            <li><i class="bi bi-check2"></i> Respetar las normas del centro</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>2º ESO A</td>
-                                    <td>Sergio Martínez Pérez</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º ESO B</td>
-                                    <td>María Pilar García Pérez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO A</td>
-                                    <td>Marga González Mancilla</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>3º ESO B</td>
-                                    <td>María Cristina Azcona González</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>3º DIVER</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO A</td>
-                                    <td>Lucía García De Oya</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>4º ESO B</td>
-                                    <td>Laura Cárdenas García</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>4º DIVER</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º BACH</td>
-                                    <td>Patricia Vera Morales</td>
-                                    <td>Adrián Valencia Valencia</td>
-                                </tr>
-                                <tr>
-                                    <td>2º BACH</td>
-                                    <td>Beatriz Cabeza Barrera</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.B.</td>
-                                    <td>Miguel Moreno Gotor</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.B.</td>
-                                    <td>María Luisa Ferrero Rodríguez</td>
-                                    <td>-</td>
-                                </tr>
-                                <tr>
-                                    <td>1º C.F.G.M.</td>
-                                    <td>Carlos Javier Amate Hernández</td>
-                                    <td>Sonia Pérez Mejías</td>
-                                </tr>
-                                <tr>
-                                    <td>2º C.F.G.M.</td>
-                                    <td>Ana María Casado Pérez</td>
-                                    <td>-</td>
+                                    <td><strong>Profesorado</strong></td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Ejercer la autoridad pedagógica</li>
+                                            <li><i class="bi bi-check2"></i> Recibir formación continua</li>
+                                            <li><i class="bi bi-check2"></i> Participar en la gestión del centro</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="icon-list">
+                                            <li><i class="bi bi-check2"></i> Educar en valores democráticos</li>
+                                            <li><i class="bi bi-check2"></i> Respetar a todos los miembros</li>
+                                            <li><i class="bi bi-check2"></i> Cumplir el plan de convivencia</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -587,86 +486,26 @@
                 </div>
             </div>
         </section>
-
-        <section class="mb-5">
-            <h2 class="section-title">Criterios de Calificación</h2>
-            <div class="info-card">
-                <div class="card-header">
-                    <i class="bi bi-clipboard-check me-2"></i>Criterios generales de evaluación
-                </div>
-                <div class="card-body">
-                    <div class="accordion" id="criteriosAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Criterios comunes para todas las materias
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Asistencia y participación: 20%</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajo en clase y tareas: 30%</li>
-                                        <li><i class="bi bi-check-circle"></i> Pruebas escritas/orales: 50%</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Criterios específicos por departamento
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <p>Consulte los criterios específicos de cada departamento en sus respectivas secciones o descargue el documento completo:</p>
-                                    <a href="#" class="btn btn-primary">
-                                        <i class="bi bi-download me-2"></i> Descargar criterios completos
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Recuperación y evaluación extraordinaria
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#criteriosAccordion">
-                                <div class="accordion-body">
-                                    <ul class="feature-list">
-                                        <li><i class="bi bi-check-circle"></i> Pruebas de recuperación por trimestres</li>
-                                        <li><i class="bi bi-check-circle"></i> Evaluación extraordinaria en junio</li>
-                                        <li><i class="bi bi-check-circle"></i> Trabajos específicos para recuperación</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <section class="mb-5">
-            <h2 class="section-title">Recursos para el Profesorado</h2>
+            <h2 class="section-title">Protocolos de actuación</h2>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="info-card h-100">
                         <div class="card-header">
-                            <i class="bi bi-laptop me-2"></i>Séneca
+                            <i class="bi bi-shield-exclamation me-2"></i>Prevención del acoso escolar
                         </div>
                         <div class="card-body">
-                            <p>Acceso al portal Séneca para profesorado con todas las herramientas administrativas y docentes.</p>
-                            <div class="d-grid gap-2 mt-3">
-                                <a href="https://seneca.juntadeandalucia.es/seneca/jsp/portal/" class="btn btn-outline-primary" target="_blank">
-                                    <i class="bi bi-box-arrow-up-right me-2"></i> Acceder a Séneca
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary">
-                                    <i class="bi bi-book me-2"></i> Manual de uso
-                                </a>
+                            <h5 class="card-title">Protocolo contra el bullying</h5>
+                            <ol class="icon-list">
+                                <li><i class="bi bi-1-circle"></i> Detección e identificación</li>
+                                <li><i class="bi bi-2-circle"></i> Comunicación a equipo directivo</li>
+                                <li><i class="bi bi-3-circle"></i> Entrevistas con partes implicadas</li>
+                                <li><i class="bi bi-4-circle"></i> Aplicación de medidas correctoras</li>
+                                <li><i class="bi bi-5-circle"></i> Seguimiento y evaluación</li>
+                            </ol>
+                            <div class="alert alert-info mt-3">
+                                <i class="bi bi-info-circle me-2"></i> Canal de denuncia anónima disponible en Secretaría.
                             </div>
                         </div>
                     </div>
@@ -675,14 +514,107 @@
                 <div class="col-md-6">
                     <div class="info-card h-100">
                         <div class="card-header">
-                            <i class="bi bi-file-earmark-text me-2"></i>Documentación importante
+                            <i class="bi bi-people-fill me-2"></i>Resolución de conflictos
                         </div>
                         <div class="card-body">
-                            <ul class="feature-list">
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Plan de Centro</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Programaciones didácticas</a></li>
-                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Protocolo COVID-19</a></li>
+                            <h5 class="card-title">Mediación escolar</h5>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check-circle"></i> Equipo de mediación formado por profesores y alumnos</li>
+                                <li><i class="bi bi-check-circle"></i> Voluntariedad y confidencialidad</li>
+                                <li><i class="bi bi-check-circle"></i> Enfoque restaurativo y educativo</li>
+                                <li><i class="bi bi-check-circle"></i> Formación específica para mediadores</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-5">
+            <h2 class="section-title">Programas y actividades</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-emoji-smile me-2"></i>Alumnado ayudante
+                        </div>
+                        <div class="card-body">
+                            <p>Programa en el que alumnos de cursos superiores actúan como referentes y apoyo para los nuevos estudiantes, facilitando su integración y resolviendo dudas.</p>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check"></i> Formación específica</li>
+                                <li><i class="bi bi-check"></i> Actividades de mentoría</li>
+                                <li><i class="bi bi-check"></i> Detección temprana de problemas</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-heart me-2"></i>Educación emocional
+                        </div>
+                        <div class="card-body">
+                            <p>Talleres y actividades para desarrollar habilidades sociales, inteligencia emocional y estrategias de resolución pacífica de conflictos.</p>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check"></i> Tutorías específicas</li>
+                                <li><i class="bi bi-check"></i> Talleres por niveles</li>
+                                <li><i class="bi bi-check"></i> Participación de orientación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-globe me-2"></i>Días conmemorativos
+                        </div>
+                        <div class="card-body">
+                            <p>Celebración de días internacionales relacionados con la convivencia, diversidad y derechos humanos con actividades participativas.</p>
+                            <ul class="icon-list">
+                                <li><i class="bi bi-check"></i> Día de la Paz</li>
+                                <li><i class="bi bi-check"></i> Día contra la Violencia de Género</li>
+                                <li><i class="bi bi-check"></i> Día de la Diversidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Documentación y contacto</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-file-earmark-text me-2"></i>Documentos relacionados
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Plan de Convivencia completo (PDF)</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Protocolo antiacoso</a></li>
                                 <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Reglamento de Régimen Interior</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Guía para familias</a></li>
+                                <li><i class="bi bi-download"></i> <a href="#" class="text-decoration-none">Formulario de incidencias</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="info-card h-100">
+                        <div class="card-header">
+                            <i class="bi bi-person-lines-fill me-2"></i>Equipo de Convivencia
+                        </div>
+                        <div class="card-body">
+                            <ul class="icon-list">
+                                <li><i class="bi bi-person"></i> Coordinadora: Marga González Mancilla</li>
+                                <li><i class="bi bi-envelope"></i> convivencia@iesado.org</li>
+                                <li><i class="bi bi-telephone"></i> 955 123 456 (Ext. 203)</li>
+                                <li><i class="bi bi-clock"></i> Atención: Martes y Jueves 12:00-14:00</li>
+                                <li><i class="bi bi-geo-alt"></i> Despacho de Convivencia (Planta 1)</li>
                             </ul>
                         </div>
                     </div>
@@ -691,6 +623,7 @@
         </section>
     </main>
 
+    <!--Footer -->
     <footer>
         <div class="container">
             <div class="row g-4">
@@ -778,3 +711,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

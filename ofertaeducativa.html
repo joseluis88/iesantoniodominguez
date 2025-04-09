@@ -6,14 +6,11 @@
     <title>Oferta Educativa - IES Antonio Domínguez Ortiz</title>
     <meta name="description" content="Descubre nuestra completa oferta educativa: ESO, Bachillerato y Formación Profesional en el IES Antonio Domínguez Ortiz de Sevilla.">
     
-    <!-- Preconexión para mejorar rendimiento -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     
     <style>
@@ -31,7 +28,6 @@
             line-height: 1.6;
         }
         
-        /* Header */
         .header {
             background: linear-gradient(135deg, var(--color-primario) 0%, #003366 100%);
             color: white;
@@ -51,10 +47,14 @@
         
         .logo img {
             max-height: 90px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
         }
         
-         /* Barra de navegación */
-         .navbar {
+        .navbar {
             background-color: white !important;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 0.5rem 0;
@@ -107,10 +107,10 @@
             padding-left: 1.75rem;
         }
         
-        /* Hero section */
         .hero-oferta {
-            background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8)), 
-                        url('recursos/imagenes/aula-clase.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 86, 163, 0.8), rgba(0, 51, 102, 0.8));
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 4rem 0;
             margin-bottom: 2rem;
@@ -127,7 +127,6 @@
             padding: 0.5rem 1rem;
         }
         
-        /* Tarjetas de etapas educativas */
         .etapa-card {
             border-radius: 8px;
             border-left: 5px solid var(--color-secundario);
@@ -135,7 +134,7 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             height: 100%;
             transition: transform 0.3s ease;
-            margin-left: 0.5rem; /* Espacio adicional a la izquierda */
+            margin-left: 0.5rem;
         }
 
         .etapa-card:hover {
@@ -147,43 +146,41 @@
             color: white;
             font-weight: 600;
             border-bottom: none;
-            padding: 0.75rem 1.5rem; /* Más padding horizontal */
+            padding: 0.75rem 1.5rem;
         }
 
         .etapa-card .card-body {
-            padding: 1.5rem 1.5rem 1.5rem 2rem; /* Más padding a la izquierda */
+            padding: 1.5rem 1.5rem 1.5rem 2rem;
         }
 
         .etapa-card .card-title {
             margin-bottom: 1rem;
-            padding-left: 0.5rem; /* Alineación con el contenido */
+            padding-left: 0.5rem;
             position: relative;
         }
 
-        /* Lista de asignaturas */
         .asignatura-list {
             list-style-type: none;
-            padding-left: 0.5rem; /* Sangría para la lista */
+            padding-left: 0.5rem; 
             columns: 2;
             column-gap: 2rem;
-            margin-left: 0.5rem; /* Espacio adicional */
+            margin-left: 0.5rem;
         }
 
         .asignatura-list li {
             padding: 0.25rem 0;
             break-inside: avoid;
             position: relative;
-            padding-left: 0.5rem; /* Espacio para los iconos */
+            padding-left: 0.5rem;
         }
 
         .asignatura-list i {
             color: var(--color-secundario);
             margin-right: 0.5rem;
             position: absolute;
-            left: -0.5rem; /* Posicionamiento de iconos */
+            left: -0.5rem;
         }
         
-        /* Acordeón para FP */
         .accordion-button:not(.collapsed) {
             background-color: rgba(0, 86, 163, 0.1);
             color: var(--color-primario);
@@ -193,8 +190,7 @@
             box-shadow: none;
             border-color: rgba(0,0,0,.125);
         }
-        
-        /* Títulos de sección */
+
         .section-title {
             position: relative;
             padding-bottom: 0.75rem;
@@ -212,7 +208,6 @@
             background-color: var(--color-secundario);
         }
         
-        /* Footer mejorado */
         footer {
             background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
             color: white;
@@ -263,7 +258,6 @@
             transform: translateY(-3px);
         }
         
-        /* Responsive */
         @media (max-width: 767.98px) {
             .header, .hero-oferta {
                 padding: 2rem 0;
@@ -280,7 +274,7 @@
     </style>
 </head>
 <body>
-    <!-- Cabecera institucional -->
+    <!--Cabecera -->
     <header class="header">
         <div class="container">
             <div class="row align-items-center">
@@ -295,7 +289,7 @@
         </div>
     </header>
 
-    <!-- Barra de navegación principal -->
+    <!--Barra de navegación-->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -307,20 +301,32 @@
                         <a class="nav-link" href="index.html">INICIO</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarCentro" role="button" data-bs-toggle="dropdown">
                             NUESTRO CENTRO
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="datoscentro.html"><i class="bi bi-building me-2"></i>Datos del Centro</a></li>
-                            <li><a class="dropdown-item active" href="ofertaeducativa.html"><i class="bi bi-book me-2"></i>Oferta Educativa</a></li>
-                            <li><a class="dropdown-item" href="plan-centro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
-                            <li><a class="dropdown-item" href="plan-acogida.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
+                            <li><a class="dropdown-item" href="ofertaeducativa.html"><i class="bi bi-book me-2"></i>Oferta Educativa</a></li>
+                            <li><a class="dropdown-item" href="plandecentro.html"><i class="bi bi-clipboard-data me-2"></i>Plan de Centro</a></li>
+                            <li><a class="dropdown-item" href="plandeacodiga.html"><i class="bi bi-people me-2"></i>Plan de Acogida</a></li>
                             <li><a class="dropdown-item" href="biblioteca.html"><i class="bi bi-bookmarks me-2"></i>Biblioteca</a></li>
-                            <li><a class="dropdown-item" href="convivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
+                            <li><a class="dropdown-item" href="planconvivencia.html"><i class="bi bi-heart me-2"></i>Plan de Convivencia</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="familias.html">FAMILIAS</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarFamilias" role="button" data-bs-toggle="dropdown">
+                            FAMILIAS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="calendarioescolar.html"><i class="bi bi-calendar me-2"></i>Calendario Escolar</a></li>
+                            <li><a class="dropdown-item" href="orientacion.html"><i class="bi bi-people me-2"></i>Área de orientación</a></li>
+                            <li><a class="dropdown-item" href="pevau.html"><i class="bi bi-mortarboard me-2"></i>PEVAU</a></li>
+                            <li><a class="dropdown-item" href="ipasen.html"><i class="bi bi-phone me-2"></i>IPASEN</a></li>
+                            <li><a class="dropdown-item" href="becas.html"><i class="bi bi-wallet2 me-2"></i>Becas Generales 24/25</a></li>
+                            <li><a class="dropdown-item" href="ayudas.html"><i class="bi bi-cash-coin me-2"></i>Ayudas</a></li>
+                            <li><a class="dropdown-item" href="neae.html"><i class="bi bi-heart-pulse me-2"></i>NEAE</a></li>
+                            <li><a class="dropdown-item" href="ampa.html"><i class="bi bi-heart me-2"></i>AMPA</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="profesorado.html">PROFESORADO</a>
@@ -344,14 +350,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-oferta">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                  <li class="breadcrumb-item"><a href="#">Nuestro Centro</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Oferta Educativa</li>
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-white">Nuestro Centro</a></li>
+                  <li class="breadcrumb-item active text-white" aria-current="page">Oferta Educativa</li>
                 </ol>
             </nav>
             <h1 class="display-4 fw-bold mb-3">Oferta Educativa</h1>
@@ -359,9 +364,8 @@
         </div>
     </section>
 
-    <!-- Contenido principal -->
+    <!--Contenido -->
     <main class="container mb-5">
-        <!-- Educación Secundaria Obligatoria -->
         <section class="mb-5">
             <h2 class="section-title">Educación Secundaria Obligatoria (ESO)</h2>
             <div class="row g-4">
@@ -451,8 +455,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Bachillerato -->
+
         <section class="mb-5">
             <h2 class="section-title">Bachillerato</h2>
             <div class="row g-4">
@@ -514,12 +517,10 @@
             </div>
         </section>
         
-        <!-- Formación Profesional -->
         <section class="mb-5">
             <h2 class="section-title">Formación Profesional</h2>
             
             <div class="accordion" id="accordionFP">
-                <!-- Grado Medio -->
                 <div class="accordion-item border-0 mb-3">
                     <h3 class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -546,10 +547,6 @@
                                                 <li><i class="bi bi-shield-check"></i> Seguridad informática</li>
                                                 <li><i class="bi bi-cloud"></i> Servicios en red</li>
                                             </ul>
-                                            
-                                            <div class="mt-3">
-                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -571,10 +568,6 @@
                                                 <li><i class="bi bi-tools"></i> Mantenimiento</li>
                                                 <li><i class="bi bi-graph-up"></i> Electrónica</li>
                                             </ul>
-                                            
-                                            <div class="mt-3">
-                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -583,7 +576,6 @@
                     </div>
                 </div>
                 
-                <!-- Grado Superior -->
                 <div class="accordion-item border-0">
                     <h3 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -610,10 +602,6 @@
                                                 <li><i class="bi bi-globe"></i> Programación web</li>
                                                 <li><i class="bi bi-phone"></i> Apps móviles</li>
                                             </ul>
-                                            
-                                            <div class="mt-3">
-                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -635,10 +623,6 @@
                                                 <li><i class="bi bi-cloud"></i> Servicios en red</li>
                                                 <li><i class="bi bi-shield-lock"></i> Seguridad</li>
                                             </ul>
-                                            
-                                            <div class="mt-3">
-                                                <a href="#" class="btn btn-sm btn-outline-primary">Más información</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -650,7 +634,7 @@
         </section>
     </main>
 
-    <!-- Footer institucional -->
+    <!--Footer -->
     <footer>
         <div class="container">
             <div class="row g-4">
@@ -693,7 +677,7 @@
                             <i class="bi bi-chevron-right text-primary me-2"></i> PEVAU
                         </a></li>
                         <li class="mb-2"><a href="ipasen.html" class="footer-link d-flex align-items-center">
-                            <i class="bi bi-chevron-right text-primary me-2"></i> IPASEN (Manuales)
+                            <i class="bi bi-chevron-right text-primary me-2"></i> IPASEN
                         </a></li>
                         <li class="mb-2"><a href="becas.html" class="footer-link d-flex align-items-center">
                             <i class="bi bi-chevron-right text-primary me-2"></i> Becas 24/25
